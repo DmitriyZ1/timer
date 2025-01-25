@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Menu from './components/Menu'
+import Timer from './components/Timer'
+import React from 'react';
+import { MyContext } from './context'
+
 
 function App() {
+  const [timer, setTimer] = React.useState<boolean>(false)
+  const [menu, setMenu] = React.useState<boolean>(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MyContext.Provider value={{setTimer, setMenu}} >
+      <div className="App">
+        {menu && <Menu />}
+        {timer && <Timer />}
+      </div>
+    </MyContext.Provider>
+
+    );
 }
 
-export default App;
+  export default App;

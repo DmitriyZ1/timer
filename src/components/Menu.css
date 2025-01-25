@@ -1,0 +1,43 @@
+
+.menu{
+    margin: 100px auto;
+    width: 250px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.list-menu{
+    font-size: 2rem;
+}
+
+.item-menu{
+    list-style-type: none;
+    text-align: center;
+}
+
+.runner{
+    position: absolute;
+    transform: translateY(30px);
+    transition:  transform 0.5s;
+}
+
+.arrow{
+    width: 10px; 
+    height: 20px; 
+    margin: 10px 0;
+    background: #B74388;
+    position: relative;
+}
+
+.arrow:after {
+    content: "";
+    width: 0; 
+    height: 0;
+    position: absolute; 
+    top: -10px; 
+    left: 100%;
+    border-width: 20px 0 20px 40px;
+    border-style: solid;
+    border-color: transparent #B74388;
+}
